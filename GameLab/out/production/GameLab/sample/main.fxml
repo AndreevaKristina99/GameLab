@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="500.0" style="-fx-background-color: Orange;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <Button fx:id="startButton" alignment="CENTER" contentDisplay="CENTER" layoutX="210.0" layoutY="235.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="80.0" style="-fx-background-color: #FF9D40; -fx-border-color: #000;" text="Старт" />
+   <Canvas fx:id="canvas" height="400.0" visible="false" width="500.0" />
+   <Canvas fx:id="timerBarCanvas" height="100.0" layoutY="400.0" width="500.0" />
+   <Label fx:id="scoreLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="210.0" layoutY="14.0" prefHeight="17.0" textAlignment="CENTER" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0">
+      <font>
+         <Font name="System Bold" size="18.0" />
+      </font>
+   </Label>
+</AnchorPane>

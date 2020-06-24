@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_gamelab" default="compile.module.gamelab">
+  <dirname property="module.gamelab.basedir" file="${ant.file.module_gamelab}"/>
+  
+  <property name="module.jdk.home.gamelab" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.gamelab" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.gamelab" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.gamelab" value="-encoding UTF-8 -source 12 -target 12 ${compiler.args}"/>
+  
+  <property name="gamelab.output.dir" value="undefined"/>
+  <property name="gamelab.testoutput.dir" value="undefined"/>
+  
+  <path id="gamelab.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="gamelab.module.production.classpath">
+    <path refid="${module.jdk.classpath.gamelab}"/>
+  </path>
+  
+  <path id="gamelab.runtime.production.module.classpath"/>
+  
+  <path id="gamelab.module.classpath">
+    <path refid="${module.jdk.classpath.gamelab}"/>
+  </path>
+  
+  <path id="gamelab.runtime.module.classpath"/>
+  
+  
+  <patternset id="excluded.from.module.gamelab">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.gamelab">
+    <patternset refid="excluded.from.module.gamelab"/>
+  </patternset>
+  
+  
+  <target name="compile.module.gamelab" depends="compile.module.gamelab.production,compile.module.gamelab.tests" description="Compile module GameLab"/>
+  
+  <target name="compile.module.gamelab.production" depends="register.custom.compilers" description="Compile module GameLab; production classes"/>
+  
+  <target name="compile.module.gamelab.tests" depends="register.custom.compilers,compile.module.gamelab.production" description="compile module GameLab; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.gamelab" description="cleanup module">
+    <delete dir="${gamelab.output.dir}"/>
+    <delete dir="${gamelab.testoutput.dir}"/>
+  </target>
+</project>
